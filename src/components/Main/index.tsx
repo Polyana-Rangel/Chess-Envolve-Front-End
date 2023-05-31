@@ -12,18 +12,13 @@ import {
   Total,
   Button2,
 } from "./styles";
+import trash from "../../assets/trash.svg";
 import Font from "../Font";
 import Box from "../Box";
-import king from "../../assets/king.svg";
-import queen from "../../assets/queen.svg";
-import rook from "../../assets/rook.svg";
-import pawn from "../../assets/pawn.svg";
-import knight from "../../assets/knight.svg";
-import bishop from "../../assets/bishop.svg";
-import trash from "../../assets/trash.svg";
-import { useState } from "react";
-import { PieceType } from "../Interfaces/pieceType";
+import { useState, useEffect } from "react";
+import { PieceType } from "../../Interfaces/pieceType";
 import { useChessBoard } from "../../contexts/chessContext";
+import api from "../../services/api";
 
 function Main() {
   const {
@@ -34,51 +29,15 @@ function Main() {
     quantityPieces,
     resetPieces,
   } = useChessBoard();
-  const [pieces, setPieces] = useState<PieceType[]>([
-    {
-      name: "King",
-      description: "The most important piece in the game",
-      image: king,
-      value: 1000,
-      border: "none",
-    },
-    {
-      name: "Queen",
-      description: "A versatile and powerful piece",
-      image: queen,
-      value: 500,
-      border: "none",
-    },
-    {
-      name: "Rook",
-      description: "A piece that moves in a straight line",
-      image: rook,
-      value: 300,
-      border: "none",
-    },
-    {
-      name: "Pawn",
-      description: "The basic piece of the game",
-      image: pawn,
-      value: 100,
-      border: "none",
-    },
-    {
-      name: "Knight",
-      description: 'A piece that moves in an "L" shape',
-      image: knight,
-      value: 150,
-      border: "none",
-    },
-    {
-      name: "Bishop",
-      description: "A piece that moves diagonally",
-      image: bishop,
-      value: 200,
-      border: "none",
-    },
-  ]);
+  const [pieces, setPieces] = useState<PieceType[]>([]);
 
+  useEffect(() => {
+    async function loadPieces() {
+      const response = await api.get("/api/pieces");
+      setPieces(response.data);
+    }
+    loadPieces();
+  },[]);
 
   function handleSelectPiece(piece: PieceType) {
     const pieceExists = chessBoard.find(
@@ -117,30 +76,34 @@ function Main() {
           <Font size="20px" weight="600">
             Passo 01 - Selecione peças
           </Font>
-          <Box flex="1" gap="1.5rem" flexWrap="wrap" margin="1rem 0 0 0">
-            {pieces &&
-              pieces.map((piece) => (
-                <Piece
-                  onClick={() => handleSelectPiece(piece)}
-                  border={piece.border}
-                >
-                  <Box flexDirection="column">
-                    <Font size="18px" weight="600">
-                      {piece.name}
-                    </Font>
-                    <Font size="13px" weight="600">
-                      {piece.description}
-                    </Font>
-                  </Box>
-                  <Box flexDirection="column">
-                    <Image src={piece.image} weight="3rem" />
-                    <Font size="22px" weight="800">
-                      {piece.value}
-                    </Font>
-                  </Box>
-                </Piece>
-              ))}
-          </Box>
+            {pieces && (
+              <Box flex="1" gap="1.5rem" flexWrap="wrap" margin="1rem 0 0 0">
+              {
+                pieces.map((piece) => (
+                  <Piece
+                  key={piece.id}
+                    onClick={() => handleSelectPiece(piece)}
+                    border={piece.border}
+                  >
+                    <Box flexDirection="column">
+                      <Font size="18px" weight="600">
+                        {piece.name}
+                      </Font>
+                      <Font size="13px" weight="600">
+                        {piece.description}
+                      </Font>
+                    </Box>
+                    <Box flexDirection="column">
+                      <Image src={`http://localhost:5000${piece.image}`} weight="3rem" />
+                      <Font size="22px" weight="800">
+                        {piece.value}
+                      </Font>
+                    </Box>
+                  </Piece>
+                ))
+              }
+              </Box>
+            )}
         </Passo1>
 
         <Box flexDirection="column" flex="1">
@@ -152,7 +115,7 @@ function Main() {
             {chessBoard &&
               chessBoard.map((piece) => (
                 <Piece2>
-                  <Image src={piece.image} weight="2rem" />
+                  <Image src={`http://localhost:5000${piece.image}`} weight="2rem" />
                   <Box flexDirection="column">
                     <Font size="18px" weight="600">
                       {piece.name}

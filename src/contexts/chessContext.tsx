@@ -5,8 +5,8 @@ import {
   useContext,
   ReactNode,
 } from "react";
-import { PieceType } from "../components/Interfaces/pieceType";
-import { ChessContextData } from "../components/Interfaces/chessContextData";
+import { PieceType } from "../Interfaces/pieceType";
+import { ChessContextData } from "../Interfaces/chessContextData";
 
 const ChessContext = createContext<ChessContextData>({} as ChessContextData);
 
@@ -30,7 +30,7 @@ export const ChessProvider = ({ children }: { children: ReactNode }) => {
   }, [chessBoard]);
 
   const addPiece = (piece: PieceType) => {
-    setChessBoard([...chessBoard, piece]);
+    setChessBoard([piece, ...chessBoard]);
 
     setTotalPieces(totalPieces + piece.value );
     setQuantityPieces(quantityPieces + 1);
@@ -64,6 +64,7 @@ export const ChessProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useChessBoard(): ChessContextData {
   const context = useContext(ChessContext);
 

@@ -10,7 +10,6 @@ interface ImageProps {
 
 export const Container = styled.main`
   display: flex;
-  gap: 1.5rem;
   margin: 0 2rem;
 `;
 export const Passo1 = styled.div`
@@ -20,6 +19,7 @@ export const Passo1 = styled.div`
   flex-direction: column;
   padding: 1rem 1rem 1rem 1.2rem;
   border-radius: 0.2rem;
+  margin: 0 1.5rem 0 0;
 `;
 
 export const Piece = styled.button<BorderProps>`
