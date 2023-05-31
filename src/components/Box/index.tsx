@@ -12,10 +12,12 @@ interface BoxProps {
   margin?: string;
   flex?: string;
   flexWrap?: string;
+  borderradius?: string;
   children: React.ReactNode;
 }
 
 function Box({
+  borderradius,
   flexWrap,
   flex,
   flexDirection,
@@ -31,6 +33,7 @@ function Box({
 }: BoxProps) {
   return (
     <Container
+    borderradius={borderradius}
     flexWrap={flexWrap}
       flex={flex}
       flexDirection={flexDirection}

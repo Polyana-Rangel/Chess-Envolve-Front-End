@@ -12,10 +12,12 @@ interface ContainerProps {
   margin?: string;
   flex?: string;
   flexWrap?: string;
+  borderradius?: string;
   
 }
 export const Container = styled.div<ContainerProps>`
   display: flex;
+  border-radius: ${(props) => props.borderradius || "0"};
   flex-wrap: ${(props) => props.flexWrap || "nowrap"};
   flex: ${(props) => props.flex || "none"};
   flex-direction: ${(props) => props.flexDirection || "row"};
