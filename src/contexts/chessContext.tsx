@@ -5,8 +5,8 @@ import {
   useContext,
   ReactNode,
 } from "react";
-import { PieceType } from "../Interfaces/pieceType";
-import { ChessContextData } from "../Interfaces/chessContextData";
+import { PieceType } from "../interfaces/pieceType";
+import { ChessContextData } from "../interfaces/chessContextData";
 
 const ChessContext = createContext<ChessContextData>({} as ChessContextData);
 

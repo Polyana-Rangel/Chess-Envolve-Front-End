@@ -1,32 +1,18 @@
 import styled from "styled-components";
+import { BoxProps } from "../../interfaces/props/boxProps";
 
-interface ContainerProps {
-  flexDirection?: string;
-  justifyContent?: string;
-  alignItems?: string;
-  gap?: string;
-  background?: string;
-  width?: string;
-  height?: string;
-  padding?: string;
-  margin?: string;
-  flex?: string;
-  flexWrap?: string;
-  borderradius?: string;
-  
-}
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div<BoxProps>`
   display: flex;
-  border-radius: ${(props) => props.borderradius || "0"};
-  flex-wrap: ${(props) => props.flexWrap || "nowrap"};
-  flex: ${(props) => props.flex || "none"};
-  flex-direction: ${(props) => props.flexDirection || "row"};
-  justify-content: ${(props) => props.justifyContent || "flex-start"};
-  align-items: ${(props) => props.alignItems || "flex-start"};
-  gap: ${(props) => props.gap || "0"};
-  background: ${(props) => props.background || "none"};
-  width: ${(props) => props.width || "auto"};
-  height: ${(props) => props.height || "auto"};
+  ${(props) => `border-radius:${props.borderradius}`};
+  ${(props) => `flex-wrap:${props.flexwrap}`};
+  ${(props) => `flex:${props.flex}`};
+  flex-direction: ${(props) => props.flexdirection || "row"};
+  justify-content: ${(props) => props.justifycontent || "flex-start"};
+  align-items: ${(props) => props.alignitems || "flex-start"};
+  ${(props) => `gap:${props.gap}`};
+  ${(props) => `background:${props.background}`};
+  ${(props) => `width:${props.width}`};
+  ${(props) => `height:${props.height}`};
   padding: ${(props) => props.padding || "0"};
   margin: ${(props) => props.margin || "0"};
 `;

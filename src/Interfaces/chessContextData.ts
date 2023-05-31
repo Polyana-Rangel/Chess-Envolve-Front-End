@@ -1,4 +1,4 @@
-import { PieceType } from "./pieceType";
+import { PieceType } from "./piece";
 
 export interface ChessContextData {
   chessBoard: PieceType[];
