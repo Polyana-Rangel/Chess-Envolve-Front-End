@@ -18,7 +18,7 @@ function Main() {
         chessBoard.map((piece) => (
           <Piece key={piece.id}>
             <Box alignitems="center" flex="1">
-              <Image src={`http://localhost:5000${piece.image}`} width="2rem" />
+              <Image src={`http://localhost:5000${piece.image}`} width="1.5rem" />
               <Box flexdirection="column" margin="0 0 0 3rem">
                 <Font size="18px" weight="600">
                   {piece.name}

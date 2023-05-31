@@ -21,7 +21,7 @@ export const Piece = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5.5rem;
+  height: 6rem;
   padding: 0 1rem 0 2rem;
   border-radius: 4px;
   border: 2px solid ${(props) => props.theme["blue-700"]};

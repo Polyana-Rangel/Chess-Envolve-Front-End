@@ -23,23 +23,23 @@ function Main() {
             Passo 03 - Resumo da seleção
           </Font>
 
-          <Box alignitems="center">
+          <Box alignitems="center" margin="1rem 0 0 0">
             <Font size="16px" weight="600">
               Quantidade de peças selecionadas:
             </Font>
 
-            <BackgroundFont>
+            <BackgroundFont width="3rem" height="1.5rem">
               <Font size="14px" weight="700">
                 {quantityPieces}
               </Font>
             </BackgroundFont>
           </Box>
         </Box>
-        <Box margin="2rem">
+        <Box margin="1rem 2rem 3rem 0">
           <Font size="16px" weight="600">
             Total:
           </Font>
-          <BackgroundFont>
+          <BackgroundFont width="10rem" height="4rem">
             <Font size="20px" weight="700">
               {totalPieces}
             </Font>
