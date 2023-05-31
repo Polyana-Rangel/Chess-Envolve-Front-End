@@ -1,11 +1,7 @@
 import styled from "styled-components";
+import { FontProps } from "../../interfaces/props/fontProps";
 
-interface ContainerProps {
-size:string;
-weight:string;
-}
-
-export const Container = styled.p<ContainerProps>`
+export const Container = styled.p<FontProps>`
 font-size: ${(props) => props.size};
 font-weight: ${(props) => props.weight};
 

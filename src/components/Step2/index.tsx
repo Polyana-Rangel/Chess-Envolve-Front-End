@@ -1,9 +1,4 @@
-import {
-  Container,
-  Piece,
-  Value,
-  Button,
-} from "./styles";
+import { Container, Piece, Value, Button } from "./styles";
 import Image from "../Image";
 import Font from "../Font";
 import Box from "../Box";
@@ -22,14 +17,16 @@ function Main() {
       {chessBoard &&
         chessBoard.map((piece) => (
           <Piece key={piece.id}>
-            <Image src={`http://localhost:5000${piece.image}`} width="2rem" />
-            <Box flexdirection="column">
-              <Font size="18px" weight="600">
-                {piece.name}
-              </Font>
-              <Font size="14px" weight="600">
-                {piece.description}
-              </Font>
+            <Box alignitems="center" flex="1">
+              <Image src={`http://localhost:5000${piece.image}`} width="2rem" />
+              <Box flexdirection="column" margin="0 0 0 3rem">
+                <Font size="18px" weight="600">
+                  {piece.name}
+                </Font>
+                <Font size="14px" weight="600">
+                  {piece.description}
+                </Font>
+              </Box>
             </Box>
             <Box alignitems="center">
               <Value>
@@ -37,11 +34,9 @@ function Main() {
                   {piece.value}
                 </Font>
               </Value>
-              <Box margin="0.5rem">
-                <Button onClick={() => removePiece(piece)}>
-                  <img src={trash} />
-                </Button>
-              </Box>
+              <Button onClick={() => removePiece(piece)}>
+                <img src={trash} />
+              </Button>
             </Box>
           </Piece>
         ))}

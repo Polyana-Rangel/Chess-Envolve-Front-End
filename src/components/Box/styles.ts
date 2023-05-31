@@ -3,7 +3,7 @@ import { BoxProps } from "../../interfaces/props/boxProps";
 
 export const Container = styled.div<BoxProps>`
   display: flex;
-  ${(props) => `border-radius:${props.borderradius}`};
+  ${(props) => props.borderradius && `border-radius:${props.borderradius}`};
   ${(props) => `flex-wrap:${props.flexwrap}`};
   ${(props) => `flex:${props.flex}`};
   flex-direction: ${(props) => props.flexdirection || "row"};

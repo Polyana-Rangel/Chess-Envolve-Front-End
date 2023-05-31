@@ -5,8 +5,6 @@ export const Container = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid ${({ theme }) => theme["gray-700"]};
+  border-bottom: 2px solid ${({ theme }) => theme["blue-600"]};
   margin: 0 2rem 2.3rem 2rem;
 `;
-
-export const Image = styled.img``;
