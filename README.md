@@ -12,7 +12,7 @@
 <!-- Informações visuais do projeto -->
 <div align="center">
     <a href="https://www.linkedin.com/in/polyana-rangel-596027156/">
-    <img alt="Polyana Rangel" src="https://img.shields.io/badge/-polyana-rangel-596027156-009db9?style=flat&logo=Linkedin&logoColor=white" />
+    <img alt="Polyana Rangel" src="https://img.shields.io/badge/-polyanarangel-009db9?style=flat&logo=Linkedin&logoColor=white" />
   </a>
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/Polyana-Rangel/Chess-Envolve-Front-End?color=009bd9">
@@ -20,8 +20,6 @@
   <a href="https://github.com/Polyana-Rangel/Chess-Envolve-Front-End/commits/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Polyana-Rangel/Chess-Envolve-Front-End?color=009bd9">
   </a>
-
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-009db9">
 
   <a href="https://github.com/Polyana-Rangel/Chess-Envolve-Front-End/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/Polyana-Rangel/Chess-Envolve-Front-End?color=009db9&logo=github">
@@ -74,15 +72,15 @@ Esse projeto foi feito utilizando as seguintes tecnologias:
 Recursos do projeto:
 
 - _Interface de usuário interativa:_ O projeto contará com uma interface de usuário responsiva e intuitiva.
-- _Bloco 1:_
+* _Bloco 1:_
 - _Clique em um item do Passo 1:_ Ao clicar em um item no Bloco 1 (representando uma peça de xadrez), o item será adicionado ao Bloco 2.
 - _Adição no topo:_ Os itens adicionados ao Bloco 2 serão exibidos na ordem inversa de adição, com o último item adicionado aparecendo no topo da lista
 - _Indicador visual de seleção:_ Um indicador visual de uma borda diferente será exibido no item selecionado no Bloco 1 para sinalizar que ele foi incluído. Isso permite que o usuário identifique facilmente as peças selecionadas.
 - _Remoção de itens selecionados:_ Ao clicar em um item já selecionado no Bloco 2, ele será removido do bloco, permitindo ao usuário alterar suas seleções.
-- _Bloco 2:_ Neste bloco, os itens selecionados pelo usuário serão exibidos.
+* _Bloco 2:_ Neste bloco, os itens selecionados pelo usuário serão exibidos.
 - _Listagem de itens selecionados:_ O Bloco 2 exibirá os itens adicionados pelo usuário no Bloco 1. Essa lista será atualizada dinamicamente conforme o usuário seleciona ou remove peças.
 - _Exclusão de itens:_ Ao clicar no ícone de lixeira ao lado de um item no Bloco 2, o item será excluído da lista de peças selecionadas.
-- *Bloco 3:*Este bloco manterá as informações atualizadas sobre o total e a quantidade de peças selecionadas.
+* _Bloco 3:_ Este bloco manterá as informações atualizadas sobre o total e a quantidade de peças selecionadas.
 - _Atualização do total e quantidade:_ O Bloco 3 manterá as informações atualizadas sobre o total e a quantidade de peças selecionadas. Esses valores serão recalculados dinamicamente à medida que o usuário inclui ou exclui peças.
 
 <!-- Pré-requisitos para rodar o projeto -->
@@ -100,38 +98,71 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 Node.js instalado na sua máquina.
 
-- _Passo 1: Clonar o repositório_
+### _Passo 1: Clonar o repositório_
 
 - Abra o terminal ou prompt de comando.
 - Navegue até o diretório onde você deseja clonar o projeto.
 - Execute o seguinte comando para clonar o repositório:
 
-bash
+```bash
 
-git clone <URL_DO_REPOSITÓRIO>
+git clone https://github.com/Polyana-Rangel/Chess-Envolve-Front-End
 
-- (Substitua <URL_DO_REPOSITÓRIO> pela URL do repositório Git onde o projeto está hospedado).
+```
 
-- _Passo 2: Instalar as dependências_
+### _Passo 2: Instalar as dependências_
 
-- No terminal ou prompt de comando, navegue até o diretório do projeto clonado.
+- No terminal ou prompt de comando, navegue até a raiz do projeto clonado.
 - Execute o seguinte comando para instalar as dependências do projeto:
 
-bash
+```bash
+
 npm install
 
-- _Passo 3: Configurar a API_
+```
 
-...
+### _Passo 3: Configurar a API
 
-- _Passo 4: Iniciar o servidor de desenvolvimento_
+- Abra o terminal ou prompt de comando na raiz do projeto clonado.
+- Navegue até a api:
+
+```bash
+
+cd api
+
+```
+
+- Instale as dependências:
+
+```bash
+
+npm install
+
+```
+
+- Rode a aplicação usando o seguinte trecho:
+
+```bash
+
+npm run dev
+
+```
+
+- A api já está funcionando na porta 5000 e com isso o frontend conseguirá visualizar as peças.
+
+Obs: Para melhor funcionamento da api, foi adicionado o pacote cors e nodemon.
+
+### _Passo 4: Iniciar o servidor de desenvolvimento da Frontend_
 
 No terminal ou prompt de comando, execute o seguinte comando para iniciar o servidor de desenvolvimento:
 
-bash
+```bash
+
 npm run dev
 
-- _Passo 5: Visualizar o projeto_
+```
+
+### _Passo 5: Visualizar o projeto_
 
 Após iniciar o servidor de desenvolvimento, o projeto estará disponível no navegador.
 Abra o seu navegador e acesse o seguinte endereço: http://localhost:5173 (ou a porta especificada no terminal, se for diferente).
