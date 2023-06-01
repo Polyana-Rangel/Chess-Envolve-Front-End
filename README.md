@@ -73,14 +73,23 @@ Recursos do projeto:
 
 * **Interface de usuário interativa:** O projeto contará com uma interface de usuário responsiva e intuitiva.
 * **Bloco 1:**
+
 **Clique em um item do Passo 1:** Ao clicar em um item no Bloco 1 (representando uma peça de xadrez), o item será adicionado ao Bloco 2.
+
 **Adição no topo:** Os itens adicionados ao Bloco 2 serão exibidos na ordem inversa de adição, com o último item adicionado aparecendo no topo da lista
+
 **Indicador visual de seleção:** Um indicador visual de uma borda diferente será exibido no item selecionado no Bloco 1 para sinalizar que ele foi incluído. Isso permite que o usuário identifique facilmente as peças selecionadas.
+
 **Remoção de itens selecionados:** Ao clicar em um item já selecionado no Bloco 2, ele será removido do bloco, permitindo ao usuário alterar suas seleções.
+
 * **Bloco 2:** Neste bloco, os itens selecionados pelo usuário serão exibidos.
+
 **Listagem de itens selecionados:** O Bloco 2 exibirá os itens adicionados pelo usuário no Bloco 1. Essa lista será atualizada dinamicamente conforme o usuário seleciona ou remove peças.
+
 **Exclusão de itens:** Ao clicar no ícone de lixeira ao lado de um item no Bloco 2, o item será excluído da lista de peças selecionadas.
+
 * **Bloco 3:** Este bloco manterá as informações atualizadas sobre o total e a quantidade de peças selecionadas.
+
 **Atualização do total e quantidade:** O Bloco 3 manterá as informações atualizadas sobre o total e a quantidade de peças selecionadas. Esses valores serão recalculados dinamicamente à medida que o usuário inclui ou exclui peças.
 
 <!-- Pré-requisitos para rodar o projeto -->
