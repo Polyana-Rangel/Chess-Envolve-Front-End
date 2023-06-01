@@ -4,14 +4,17 @@ import { defaultTheme } from "./styles/themes/default";
 import GlobalStyles from "./styles/global";
 import AppRoutes from "./routes";
 import { ChessProvider } from "./contexts/chessContext";
+import {WindowDimensionProvider} from "./contexts/windowDimensionContext";
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
         <ChessProvider>
-          <GlobalStyles />
-          <AppRoutes />
+          <WindowDimensionProvider>
+            <GlobalStyles />
+            <AppRoutes />
+          </WindowDimensionProvider>
         </ChessProvider>
       </BrowserRouter>
     </ThemeProvider>

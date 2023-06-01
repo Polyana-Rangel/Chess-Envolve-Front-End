@@ -1,23 +1,29 @@
-import {
-  Container,
-  Button,
-  BackgroundFont,
-} from "./styles";
+import { Container, Button, BackgroundFont } from "./styles";
 import trash from "../../assets/trash.svg";
 import Font from "../Font";
 import Box from "../Box";
 import { useChessBoard } from "../../contexts/chessContext";
+import { Step } from "../../interfaces/step";
+import { useWindow } from "../../contexts/windowDimensionContext";
 
-function Main() {
-  const {
-    totalPieces,
-    quantityPieces,
-    resetPieces,
-  } = useChessBoard();
+function Step3({ pieces, setPieces }: Step) {
+  const { windowWidth } = useWindow()
+  const { totalPieces, quantityPieces, resetPieces } = useChessBoard();
+
+  const handleAllClean = () => {
+    setPieces(
+      pieces.map((selectedPiece) => {
+        selectedPiece.border = "none";
+        return selectedPiece;
+      })
+    );
+
+    resetPieces();
+  };
 
   return (
     <Container>
-      <Box>
+      <Box flexdirection={windowWidth > 540 ? "row" : "column"} alignitems="center">
         <Box flex="1" flexwrap="wrap" margin="1rem">
           <Font size="20px" weight="600">
             Passo 03 - Resumo da seleção
@@ -47,7 +53,7 @@ function Main() {
         </Box>
       </Box>
 
-      <Button onClick={resetPieces}>
+      <Button onClick={handleAllClean}>
         <Box alignitems="center">
           <img src={trash} />
           <Font size="14px" weight="400">
@@ -59,4 +65,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Step3;

@@ -22,6 +22,15 @@ export const Button = styled.button`
   background: ${(props) =>
     `linear-gradient(to bottom, ${props.theme["blue-400"]} 0%, ${props.theme["blue-500"]} 100%)`};
 
+  transition: all 0.6s ease;
+
+  &:hover {
+    transform: perspective(1px) scale(1.1);
+    
+    background: ${(props) =>
+    `linear-gradient(to bottom, ${props.theme["blue-400"]} 100%, ${props.theme["blue-500"]} 0%)`};
+  }
+
   img {
     margin: 0 0.5rem 0 0;
   }

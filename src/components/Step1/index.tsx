@@ -2,22 +2,13 @@ import { Container, Piece } from "./styles";
 import Image from "../Image";
 import Font from "../Font";
 import Box from "../Box";
-import { useState, useEffect } from "react";
-import { PieceType } from "../../interfaces/piece";
 import { useChessBoard } from "../../contexts/chessContext";
-import api from "../../services/api";
+import { PieceType } from "../../interfaces/piece";
+import { Step } from "../../interfaces/step";
 
-function Step1() {
+function Step1({pieces, setPieces}: Step) {
   const { addPiece, removePiece, chessBoard } = useChessBoard();
-  const [pieces, setPieces] = useState<PieceType[]>([]);
 
-  useEffect(() => {
-    async function loadPieces() {
-      const response = await api.get("/api/pieces");
-      setPieces(response.data);
-    }
-    loadPieces();
-  }, []);
 
   function handleSelectPiece(piece: PieceType) {
     const pieceExists = chessBoard.find(
@@ -55,7 +46,7 @@ function Step1() {
         Passo 01 - Selecione peças
       </Font>
 
-      <Box flex="1" gap="1.5rem" flexwrap="wrap" margin="1rem 0 0 0">
+      <Box flex="1" gap="1.5rem" flexwrap="wrap" margin="1rem 0 0 0" justifycontent="center">
         {pieces ? (
           pieces.map((piece) => (
             <Piece

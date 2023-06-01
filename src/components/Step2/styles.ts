@@ -15,6 +15,10 @@ export const Container = styled.section`
   p + div {
     margin: 1rem 0 0 0;
   }
+
+  @media screen and (max-width: 768px) {
+    margin: 2rem 0 0 0;
+  }
 `;
 
 export const Piece = styled.div`
@@ -43,4 +47,12 @@ export const Button = styled.button`
     `linear-gradient(to bottom, ${props.theme["blue-900"]} 0%, ${props.theme["blue-1000"]} 100%)`};
   padding: 0.1rem 0.7rem;
   border-radius: 0.2rem;
+  transition: all 0.6s ease;
+
+  &:hover {
+    transform: perspective(1px) scale(1.1);
+    
+    background: ${(props) =>
+    `linear-gradient(to bottom, ${props.theme["blue-900"]} 100%, ${props.theme["blue-1000"]} 0%)`};
+  }
 `;

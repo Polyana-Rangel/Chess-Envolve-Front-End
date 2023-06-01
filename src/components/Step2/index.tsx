@@ -4,9 +4,24 @@ import Font from "../Font";
 import Box from "../Box";
 import trash from "../../assets/trash.svg";
 import { useChessBoard } from "../../contexts/chessContext";
+import { Step } from "../../interfaces/step";
+import { PieceType } from "../../interfaces/piece";
 
-function Main() {
+function Step2({pieces, setPieces}: Step) {
   const { removePiece, chessBoard } = useChessBoard();
+
+  const handleRemovePiece = (piece: PieceType) => {
+    setPieces(
+      pieces.map((selectedPiece) => {
+        if (selectedPiece.name === piece.name) {
+          selectedPiece.border = "none";
+        }
+        return selectedPiece;
+      })
+    );
+
+    removePiece(piece)
+  }
 
   return (
     <Container>
@@ -34,7 +49,7 @@ function Main() {
                   {piece.value}
                 </Font>
               </Value>
-              <Button onClick={() => removePiece(piece)}>
+              <Button onClick={() => handleRemovePiece(piece)}>
                 <img src={trash} />
               </Button>
             </Box>
@@ -44,4 +59,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Step2;
