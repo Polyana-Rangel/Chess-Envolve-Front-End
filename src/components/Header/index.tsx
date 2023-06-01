@@ -1,4 +1,5 @@
-import { Container, Image } from "./styles";
+import { Container } from "./styles";
+import Image from "../Image";
 import Logo from "../../assets/logo.svg";
 
 function Header() {
