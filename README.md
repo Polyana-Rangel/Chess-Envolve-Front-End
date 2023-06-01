@@ -137,7 +137,7 @@ npm install
 
 ```bash
 
-cd api
+cd docs
 
 ```
 
